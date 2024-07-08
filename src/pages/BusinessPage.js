@@ -51,8 +51,9 @@ const BusinessPage = () => {
 
   return (
     <div className={styles.businessPageContainer}>
-      <div className={styles.businessPhoto}>
-        <img src={business.businessPhoto} alt="Business" />
+      <div className={styles.businessPhotoContainer}>
+        <img src={business.businessPhoto} alt="Business Background" className={styles.blurredBackground} />
+        <img src={business.businessPhoto} alt="Business" className={styles.businessPhoto} />
       </div>
       <div className={styles.ownerPhotoContainer}>
         <img src={business.ownerPhoto} alt="Owner" />
@@ -155,11 +156,11 @@ const BusinessPage = () => {
       <div className={styles.qrCodeSection}>
         <div className={styles.qrCodeHeader}>
           <div className={styles.textHeader}>QR Code</div>
-          <div 
+          <div
             className={styles.downloadbtn}
             onClick={downloadQRCode}
-            >
-              <FaDownload />
+          >
+            <FaDownload />
           </div>
         </div>
         <div className={styles.qrCodeContainer}>
