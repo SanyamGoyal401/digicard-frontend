@@ -13,10 +13,10 @@ const AuthenticatedApp = () => {
     return (
         <AuthProvider>
             <Routes>
+                <Route path='/login' element={<Login />} />
                 <Route element={<PrivateRoute />}>
                     <Route path='/' element={<Dashboard />} />
                     <Route path='/form' element={<AdminForm />} />
-                    <Route path='/login' element={<Login />} />
                 </Route>
             </Routes>
         </AuthProvider>
