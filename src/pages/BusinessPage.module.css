@@ -1,0 +1,219 @@
+.businessPageContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(rgb(75, 8, 86), #d522e5);
+}
+
+.businessPhoto {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 3px solid #fff;
+}
+
+.businessPhoto img {
+  width: 100%;
+  height: auto;
+}
+
+.ownerPhotoContainer {
+  position: relative;
+  top: 25px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #fff;
+  z-index: 1;
+}
+
+.ownerPhotoContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ownerDetailsCard {
+  position: relative;
+  top: -25px;
+  width: 95%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 15px;
+  z-index: 0;
+  border: 5px solid rgb(71, 7, 74);
+}
+
+.ownerDetailsCard div {
+  position: relative;
+  top: 25px;
+  padding: 20px 0px;
+}
+
+.ownerDetailsCard h2 {
+  margin: 0;
+  color: #333;
+}
+
+.ownerDetailsCard p {
+  color: #666;
+}
+
+.contactInfo,
+.socialLinks {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  background-color: purple;
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 50px;
+  justify-content: space-evenly;
+}
+
+.iconContainer {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex: 0.1;
+}
+
+.contactLink {
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex: 0.9;
+}
+
+.contactLink a {
+  color: white;
+  font-size: 18px;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.socialLinkContainer {
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  height: 46px;
+  width: 46px;
+}
+
+.socialLinkContainer .icon {
+  height: 38px;
+  width: 38px;
+}
+
+#instagram {
+  color: #ee2a7b
+}
+
+#facebook {
+  color: blue;
+}
+
+#twitter {
+  color: #00acee;
+}
+
+#youtube {
+  color: red;
+}
+
+#justdial {
+  color: #f9ce34;
+}
+
+.qrCodeSection {
+  margin-top: 1rem;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.qrCodeHeader {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1rem;
+}
+
+.downloadbtn {
+  cursor: pointer;
+}
+
+.qrcode {
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .businessPhoto {
+    height: 200px;
+  }
+
+  .ownerPhotoContainer {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ownerDetailsCard {
+    top: -20px;
+    padding: 15px;
+  }
+
+  .contactInfo,
+  .socialLinks {
+    max-width: 95%;
+  }
+
+  .contactLink a {
+    font-size: 16px;
+  }
+
+  .contactItem {
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 35px;
+  }
+
+  .socialLinkContainer {
+    height: 38px;
+    width: 38px;
+  }
+
+  .socialLinkContainer .icon {
+    height: 32px;
+    width: 32px;
+  }
+}
