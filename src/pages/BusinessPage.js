@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaGlobe, FaInstagram, FaFacebook, FaTwitter, FaYoutube, FaStar, FaDownload } from 'react-icons/fa';
 import styles from './BusinessPage.module.css';
 import QRCode from 'qrcode.react';
+import BaseUrl from '../constants';
 
 const BusinessPage = () => {
   const [business, setBusiness] = useState(null);
@@ -12,7 +13,7 @@ const BusinessPage = () => {
 
   useEffect(() => {
     const fetchBusiness = async () => {
-      const { data } = await axios.get(`http://localhost:8000/business/${route}`);
+      const { data } = await axios.get(`${BaseUrl}/business/${route}`);
       setBusiness(data);
     };
 
@@ -165,7 +166,7 @@ const BusinessPage = () => {
           <QRCode
             id='qrCodeEl'
             className={styles.qrcode}
-            size={qrCodeSize}
+            size={Math.min(qrCodeSize, 300)}
             value={window.location.href}
           />
         </div>

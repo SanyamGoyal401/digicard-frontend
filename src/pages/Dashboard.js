@@ -11,6 +11,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import styles from './Dashboard.module.css';
 import AuthContext from '../context/authContext';
 import { useNavigate } from 'react-router-dom';
+import BaseUrl from '../constants';
 
 const Dashboard = () => {
   const [businesses, setBusinesses] = useState([]);
@@ -24,7 +25,7 @@ const Dashboard = () => {
 
   const fetchBusinesses = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/business/form'); // Adjust the URL as needed
+      const response = await axios.get(`${BaseUrl}/business/form`); // Adjust the URL as needed
       setBusinesses(response.data);
       console.log(response.data);
     } catch (error) {
@@ -48,7 +49,7 @@ const Dashboard = () => {
 
   const handleUpdateSubmit = async () => {
     try {
-      await axios.put(`http://localhost:8000/business/form/${selectedBusiness._id}`, selectedBusiness);
+      await axios.put(`${BaseUrl}/business/form/${selectedBusiness._id}`, selectedBusiness);
       fetchBusinesses();
       setOpenUpdateModal(false);
     } catch (error) {
@@ -58,7 +59,7 @@ const Dashboard = () => {
 
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete(`http://localhost:8000/business/form/${selectedBusiness._id}`);
+      await axios.delete(`${BaseUrl}/business/form/${selectedBusiness._id}`);
       fetchBusinesses();
       setOpenDeleteModal(false);
     } catch (error) {
@@ -83,7 +84,7 @@ const Dashboard = () => {
     data.append('photo', file);
 
     try {
-      const response = await axios.post('http://localhost:8000/business/form/photo', data, {
+      const response = await axios.post(`${BaseUrl}/business/form/photo`, data, {
         onUploadProgress: (progressEvent) => {
           setUploadProgress({ ...uploadProgress, [type]: (progressEvent.loaded / progressEvent.total) * 100 });
         },
@@ -99,7 +100,7 @@ const Dashboard = () => {
   const handleImageDelete = async (type) => {
     const url = selectedBusiness[type];
     try {
-      await axios.delete('http://localhost:8000/business/form/photo', { data: { url: url } });
+      await axios.delete(`${BaseUrl}/business/form/photo`, { data: { url: url } });
       setSelectedBusiness({ ...selectedBusiness, [type]: '' });
     } catch (error) {
       console.error('Delete failed:', error);

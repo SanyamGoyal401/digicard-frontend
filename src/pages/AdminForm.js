@@ -3,6 +3,7 @@ import styles from './AdminForm.module.css';
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/authContext';
+import BaseUrl from '../constants';
 
 const AdminForm = () => {
   const [formData, setFormData] = useState({
@@ -45,7 +46,7 @@ const AdminForm = () => {
     data.append('photo', file);
 
     try {
-      const response = await axios.post('http://localhost:8000/business/form/photo', data, {
+      const response = await axios.post(`${BaseUrl}/business/form/photo`, data, {
         onUploadProgress: (progressEvent) => {
           setUploadProgress({ ...uploadProgress, [type]: (progressEvent.loaded / progressEvent.total) * 100 });
         },
@@ -61,7 +62,7 @@ const AdminForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      await axios.post('http://localhost:8000/business/form', formData);
+      await axios.post(`${BaseUrl}/business/form`, formData);
       navigate('/');
     }
     catch(error){

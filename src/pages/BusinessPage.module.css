@@ -173,8 +173,15 @@
   cursor: pointer;
 }
 
+.qrCodeContainer{
+  height: 100%;
+  width: 100%;
+}
+
 .qrcode {
-  margin: 0 auto;
+  max-width: 400px;
+  max-height: 400px;
+  margin: auto;
 }
 
 @media (max-width: 600px) {

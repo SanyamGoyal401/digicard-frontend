@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
+import BaseUrl from '../constants';
 axios.defaults.withCredentials = true;
 const AuthContext = createContext();
 
@@ -9,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   
   const checkAuth = useCallback(async () => {
     try {
-      await axios.get('http://localhost:8000/user/authme');
+      await axios.get(`${BaseUrl}/user/authme`);
       setIsAuthenticated(true);
     } catch (err) {
       setIsAuthenticated(false);
@@ -23,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:8000/user/login', { email, password });
+      const response = await axios.post(`${BaseUrl}/user/login`, { email, password });
       if (response.data.message === 'Login Successful') {
         setIsAuthenticated(true);
       }
@@ -34,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await axios.post('http://localhost:8000/user/logout');
+    await axios.post(`${BaseUrl}/user/logout`);
     setIsAuthenticated(false);
   };
 
