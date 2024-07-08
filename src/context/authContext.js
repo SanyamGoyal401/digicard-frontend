@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const response = await axios.post(`${BaseUrl}/user/login`, { email, password });
-      if (response.data.message === 'Login Successful') {
+      if (response.data.message === 'Login Successfull') {
         setIsAuthenticated(true);
       }
     } catch (err) {
