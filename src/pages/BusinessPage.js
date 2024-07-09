@@ -168,6 +168,7 @@ const BusinessPage = () => {
             id='qrCodeEl'
             className={styles.qrcode}
             size={Math.min(qrCodeSize, 300)}
+            includeMargin={true}
             value={window.location.href}
           />
         </div>
