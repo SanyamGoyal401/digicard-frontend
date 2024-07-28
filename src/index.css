@@ -1,17 +1,28 @@
+
+@font-face {
+  font-family: 'Tommy';
+  src:
+    	url('./fonts/MadeTommyMedium.otf'),
+      url('./fonts/MadeTommyBlack.otf'),
+      url('./fonts/MadeTommyBlackOutline.otf'),
+      url('./fonts/MadeTommyBold.otf'),
+      url('./fonts/MadeTommyBoldOutline.otf'),
+      url('./fonts/MadeTommyExtraBold.otf'),
+      url('./fonts/MadeTommyExtraBoldOutline.otf'),
+      url('./fonts/MadeTommyLight.otf'),
+      url('./fonts/MadeTommyLightOutline.otf'),
+      url('./fonts/MadeTommyMediumOutline.otf'),
+      url('./fonts/MadeTommyRegular.otf'),
+      url('./fonts/MadeTommyRegularOutline.otf'),
+      url('./fonts/MadeTommyThin.otf'),
+      url('./fonts/MadeTommyThinOutline.otf'),
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Tommy", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-@font-face {
-  font-family: 'Tommy';
-  src: local();
 }
