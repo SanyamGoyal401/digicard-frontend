@@ -8,14 +8,23 @@ import BaseUrl from '../constants';
 const AdminForm = () => {
   const [formData, setFormData] = useState({
     route: '',
+    template: '1',
     businessName: '',
+    businessNameColor: '#333333',
+    businessPhotoBackground: '#3d0a42',
     ownerName: '',
+    ownerNameColor: '#ffffff',
     businessPhoto: '',
+    detailCardBorder: 'ffdd00',
     ownerPhoto: '',
     phone: '',
     email: '',
     address: '',
+    website: '',
+    contactCardColor: '#3d0a42',
     aboutUs: '',
+    aboutUsColor: '#333333',
+    aboutUsHeadingColor: '#3d0a42',
     instagram: '',
     facebook: '',
     twitter: '',
@@ -66,7 +75,7 @@ const AdminForm = () => {
       navigate('/');
     }
     catch(error){
-      alert(error);
+      console.log(error);
     }
   };
 
@@ -80,13 +89,20 @@ const AdminForm = () => {
         </div>
 
         <div className={styles.formGroup}>
+          <label className={styles.label}>Template:</label>
+          <input className={styles.input} type="text" name="template" onChange={handleChange} required />
+        </div>
+
+        <div className={styles.formGroup}>
           <label className={styles.label}>Business Name:</label>
           <input className={styles.input} type="text" name="businessName" onChange={handleChange} required />
+          <input className={styles.colorPicker} value={formData.businessNameColor} type='color' name='businessNameColor' onChange={handleChange} required />
         </div>
 
         <div className={styles.formGroup}>
           <label className={styles.label}>Owner Name:</label>
           <input className={styles.input} type="text" name="ownerName" onChange={handleChange} required />
+          <input className={styles.colorPicker} value={formData.ownerNameColor} type='color' name='ownerNameColor' onChange={handleChange} required />
         </div>
 
         <div className={styles.formGroup}>
@@ -94,6 +110,7 @@ const AdminForm = () => {
           <input className={styles.input} type="file" name="businessPhoto" onChange={(e) => handleFileChange(e, 'businessPhoto')} />
           {uploading.businessPhoto && <div className={styles.progressBar}><div className={styles.progress} style={{ width: `${uploadProgress.businessPhoto}%` }} /></div>}
           {formData.businessPhoto && <img src={formData.businessPhoto} alt="Business" className={styles.imagePreview} />}
+          <input className={styles.colorPicker} value={formData.businessPhotoBackground} type='color' name='businessPhotoBackground' onChange={handleChange} required />
         </div>
 
         <div className={styles.formGroup}>
@@ -101,6 +118,16 @@ const AdminForm = () => {
           <input className={styles.input} type="file" name="ownerPhoto" onChange={(e) => handleFileChange(e, 'ownerPhoto')} />
           {uploading.ownerPhoto && <div className={styles.progressBar}><div className={styles.progress} style={{ width: `${uploadProgress.ownerPhoto}%` }} /></div>}
           {formData.ownerPhoto && <img src={formData.ownerPhoto} alt="Owner" className={styles.imagePreview} />}
+        </div>
+
+        <div>
+          <label className={styles.label}>Detail Card Border Color</label>
+          <input className={styles.input} type='color' name='detailCardBorder' onChange={handleChange} required />
+        </div>
+
+        <div>
+          <label className={styles.label}>Contact Card Color</label>
+          <input className={styles.input} type='color' name='contactCardColor' onChange={handleChange} required />
         </div>
 
         <div className={styles.formGroup}>
@@ -119,8 +146,23 @@ const AdminForm = () => {
         </div>
 
         <div className={styles.formGroup}>
+          <label className={styles.label}>Website:</label>
+          <input className={styles.input} type="text" name="website" onChange={handleChange} required />
+        </div>
+
+        <div className={styles.formGroup}>
           <label className={styles.label}>About Us:</label>
           <textarea className={styles.textarea} name="aboutUs" onChange={handleChange} required />
+        </div>
+
+        <div>
+          <label className={styles.label}>About Us Color</label>
+          <input className={styles.input} type='color' name='aboutUsColor' onChange={handleChange} required />
+        </div>
+
+        <div>
+          <label className={styles.label}>About Us Heading Color</label>
+          <input className={styles.input} type='color' name='aboutUsHeadingColor' onChange={handleChange} required />
         </div>
 
         <div className={styles.formGroup}>

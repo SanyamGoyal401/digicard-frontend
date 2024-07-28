@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   const fetchBusinesses = async () => {
     try {
-      const response = await axios.get(`${BaseUrl}/business/form`); // Adjust the URL as needed
+      const response = await axios.get(`${BaseUrl}/business/form`);
       setBusinesses(response.data);
       console.log(response.data);
     } catch (error) {
@@ -35,7 +35,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchBusinesses();
-  }, []);
+  },[]);
 
   const handleUpdate = (business) => {
     setSelectedBusiness(business);
@@ -162,6 +162,14 @@ const Dashboard = () => {
                   margin="normal"
                 />
                 <TextField
+                  label="Template"
+                  name="template"
+                  value={selectedBusiness.template}
+                  onChange={handleChange}
+                  fullWidth
+                  margin="normal"
+                />
+                <TextField
                   label="Business Name"
                   name="businessName"
                   value={selectedBusiness.businessName}
@@ -169,6 +177,18 @@ const Dashboard = () => {
                   fullWidth
                   margin="normal"
                 />
+                <div
+                  className={styles.formGroup}
+                >
+                  <label className={styles.label}>Business Name Color</label>
+                  <input
+                    className={styles.input}
+                    name="businessNameColor"
+                    type='color'
+                    value={selectedBusiness.businessNameColor}
+                    onChange={handleChange}
+                  />
+                </div>
                 <TextField
                   label="Owner Name"
                   name="ownerName"
@@ -177,6 +197,18 @@ const Dashboard = () => {
                   fullWidth
                   margin="normal"
                 />
+                <div
+                  className={styles.formGroup}
+                >
+                  <label className={styles.label}>Owner Name Color</label>
+                  <input
+                    className={styles.input}
+                    name="ownerNameColor"
+                    type='color'
+                    value={selectedBusiness.ownerNameColor}
+                    onChange={handleChange}
+                  />
+                </div>
                 <div className={styles.formGroup}>
                   <label className={styles.label}>Business Photo:</label>
                   <input
@@ -185,6 +217,18 @@ const Dashboard = () => {
                     name="businessPhoto"
                     onChange={(e) => handleFileUpload(e, 'businessPhoto')}
                   />
+                  <div
+                  className={styles.formGroup}
+                >
+                  <label className={styles.label}>Business Photo Background Color</label>
+                  <input
+                    className={styles.input}
+                    name="businessPhotoBackground"
+                    type='color'
+                    value={selectedBusiness.businessPhotoBackground}
+                    onChange={handleChange}
+                  />
+                </div>
                   {uploading.businessPhoto && (
                     <div className={styles.progressBar}>
                       <div className={styles.progress} style={{ width: `${uploadProgress.businessPhoto}%` }} />
@@ -216,6 +260,30 @@ const Dashboard = () => {
                       <IconButton onClick={() => handleImageDelete('ownerPhoto')}><CancelIcon /></IconButton>
                     </div>
                   )}
+                </div>
+                <div
+                  className={styles.formGroup}
+                >
+                  <label className={styles.label}>Detail Card Border Color</label>
+                  <input
+                    className={styles.input}
+                    name="detailCardBorder"
+                    type='color'
+                    value={selectedBusiness.detailCardBorder}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div
+                  className={styles.formGroup}
+                >
+                  <label className={styles.label}>Contact Card Color</label>
+                  <input
+                    className={styles.input}
+                    name="contactCardColor"
+                    type='color'
+                    value={selectedBusiness.contactCardColor}
+                    onChange={handleChange}
+                  />
                 </div>
                 <TextField
                   label="Phone"
@@ -249,6 +317,30 @@ const Dashboard = () => {
                   fullWidth
                   margin="normal"
                 />
+                <div
+                  className={styles.formGroup}
+                >
+                  <label className={styles.label}>About Us Color</label>
+                  <input
+                    className={styles.input}
+                    name="aboutUsColor"
+                    type='color'
+                    value={selectedBusiness.aboutUsColor}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div
+                  className={styles.formGroup}
+                >
+                  <label className={styles.label}>About Us Heading Color</label>
+                  <input
+                    className={styles.input}
+                    name="aboutUsHeadingColor"
+                    type='color'
+                    value={selectedBusiness.aboutUsHeadingColor}
+                    onChange={handleChange}
+                  />
+                </div>
                 <TextField
                   label="Instagram"
                   name="instagram"

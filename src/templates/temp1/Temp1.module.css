@@ -1,0 +1,316 @@
+.businessPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.businessPhotoContainer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  overflow: hidden;
+  padding: 5px 0 30px 0;
+  background-color: #3d0a42;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.businessPhoto {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.infoContainer {
+  position: relative;
+  top: -25px;
+  width: 98%;
+  max-width: 580px;
+  height: 120px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid #ffdd00;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  background-color: white;
+}
+
+.ownerPhotoContainer {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #ffdd00;
+}
+
+.ownerPhotoContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ownerDetailsCard {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: end;
+}
+
+.businessName {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+.ownerName {
+  color: #3d0a42;
+  font-style: bold;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.contactInfo, 
+.socialLinks {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  align-items: flex-end;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.iconContainer {
+  color: #3d0a42;
+  display: flex;
+  flex: 0.2;
+}
+
+.contactLink {
+  flex: 0.8;
+}
+
+.contactLink a {
+  color: #3d0a42;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.line {
+  background-color: #3d0a42;
+  height: 2px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.socialLinkContainer {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  height: 46px;
+  width: 46px;
+  z-index: 1;
+}
+
+.socialLinkContainer .icon {
+  height: 38px;
+  width: 38px;
+}
+
+#instagram {
+  color: #ee2a7b;
+}
+
+#facebook {
+  color: blue;
+}
+
+#twitter {
+  color: #00acee;
+}
+
+#youtube {
+  color: red;
+}
+
+#justdial {
+  color: #f9ce34;
+}
+
+.aboutContainer{
+  position: relative;
+  top: -40px;
+  background-color: #EAE5E5;
+  max-width: 600px;
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutText {
+  margin-top: 60px;
+  background-color: white;
+  font-size: 24px;
+  padding: 8px;
+  color: #3d0a42;
+  font-weight: 700;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.aboutSection {
+  z-index: 0;
+  text-align: center;
+  padding: 20px;
+  border: 3px solid #3d0a42;
+  border-radius: 12px;
+  position: relative;
+  top: -25px;
+  width: 400px;
+}
+
+.space {
+  height: 20px;
+}
+
+.qrCodeSection {
+  position: relative;
+  top: -40px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  background-color: rgb(234, 229, 229);
+}
+
+.qrCodeHeader {
+  display: flex;
+  justify-content: space-evenly;
+  color: #3d0a42;
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.downloadbtn {
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 900;
+  color: #3d0a42;
+}
+
+.downloadLogo {
+  height: 24px;
+  width: 24px;
+  font-weight: 900;
+}
+
+.qrCodeContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.qrcode {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+@media (max-width: 600px) {
+  .businessPhoto {
+    height: 300px;
+  }
+
+  .infoContainer {
+    width: 95%;
+    height: 80px;
+  }
+
+  .ownerPhotoContainer {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .ownerName {
+    font-style: bold;
+    font-size: 24px;
+    font-weight: 900;
+  }
+
+  .businessName {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+
+  .contactInfo, .socialLinks {
+    max-width: 95%;
+  }
+
+  .contactLink a {
+    font-size: 16px;
+  }
+
+  .contactItem {
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .line {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .socialLinkContainer {
+    height: 38px;
+    width: 38px;
+  }
+
+  .socialLinkContainer .icon {
+    height: 32px;
+    width: 32px;
+  }
+
+  .icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .aboutSection {
+    width: 80%;
+  }
+}
