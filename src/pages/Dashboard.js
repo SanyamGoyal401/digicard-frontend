@@ -311,7 +311,7 @@ const Dashboard = () => {
                 />
                 <TextField
                   label="About Us"
-                  name="about"
+                  name="aboutUs"
                   value={selectedBusiness.aboutUs}
                   onChange={handleChange}
                   fullWidth
